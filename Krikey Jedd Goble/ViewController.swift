@@ -19,11 +19,15 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var playerViewContainer: UIView!
+    @IBOutlet weak var playerViewHeightConstraint: NSLayoutConstraint!
     
     
     var results: [MusicVideo] = []
     
     var selectedVideoURL: URL? = nil
+    
+    var playerView: PlayerView? = nil
     
     let networkingManager = NetworkingManager()
     
@@ -36,7 +40,28 @@ class ViewController: UIViewController {
         let nib = UINib(nibName: MusicVideoCollectionViewCell.reuseID, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: MusicVideoCollectionViewCell.reuseID)
         
+        setupPlayerView()
         performDefaultSearch()
+    }
+    
+    func setupPlayerView() {
+        if let playerSubView = UINib(nibName: "PlayerView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? PlayerView {
+            
+            playerViewContainer.addSubview(playerSubView)
+            playerView = playerSubView
+        }
+    }
+    
+    func animatePlayerView(hide: Bool) {
+        var height: CGFloat = 0.0
+        
+        if !hide {
+            height = view.frame.width * 0.5625 // Assumes 16:9 Aspect Ratio
+        }
+        
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self?.playerViewHeightConstraint.constant = height
+        }
     }
     
     private func performDefaultSearch() {
@@ -100,12 +125,22 @@ extension ViewController: UICollectionViewDelegate {
         
         let musicVideo = results[indexPath.item]
         if let urlString = musicVideo.videoPreviewURLString,
-            let url = URL(string: urlString) {
+            let url = URL(string: urlString),
+            let playerView = playerView {
             
             selectedVideoURL = url
-            performSegue(withIdentifier: "SearchToFullScreenSegue", sender: self)
+            
+            animatePlayerView(hide: false)
+            playerView.configure(withURL: url) { [weak self] (dismissed) in
+                
+                playerView.pause()
+                self?.animatePlayerView(hide: true)
+                
+                if !dismissed {
+                    self?.performSegue(withIdentifier: "SearchToFullScreenSegue", sender: self)
+                }
+            }
         }
-        
     }
 }
 

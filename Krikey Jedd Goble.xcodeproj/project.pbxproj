@@ -17,6 +17,8 @@
 		040F31452301AE3C0040BB88 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F31442301AE3C0040BB88 /* NetworkingManager.swift */; };
 		040F31472301AF570040BB88 /* MusicVideoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F31462301AF570040BB88 /* MusicVideoModels.swift */; };
 		040F314B2301D4E00040BB88 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F314A2301D4E00040BB88 /* PlayerViewController.swift */; };
+		040F314D2301DD590040BB88 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F314C2301DD590040BB88 /* PlayerView.swift */; };
+		040F314F2301DEB30040BB88 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040F314E2301DEB30040BB88 /* PlayerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		040F31442301AE3C0040BB88 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		040F31462301AF570040BB88 /* MusicVideoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoModels.swift; sourceTree = "<group>"; };
 		040F314A2301D4E00040BB88 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		040F314C2301DD590040BB88 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		040F314E2301DEB30040BB88 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				040F31322301AAAF0040BB88 /* Main.storyboard */,
 				040F314A2301D4E00040BB88 /* PlayerViewController.swift */,
 				040F31402301AD790040BB88 /* MusicVideoCollectionViewCell.swift */,
+				040F314C2301DD590040BB88 /* PlayerView.swift */,
+				040F314E2301DEB30040BB88 /* PlayerView.xib */,
 				040F31442301AE3C0040BB88 /* NetworkingManager.swift */,
 				040F31462301AF570040BB88 /* MusicVideoModels.swift */,
 				040F31412301AD790040BB88 /* MusicVideoCollectionViewCell.xib */,
@@ -141,6 +147,7 @@
 				040F31392301AAB00040BB88 /* LaunchScreen.storyboard in Resources */,
 				040F31362301AAB00040BB88 /* Assets.xcassets in Resources */,
 				040F31342301AAAF0040BB88 /* Main.storyboard in Resources */,
+				040F314F2301DEB30040BB88 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +160,7 @@
 			files = (
 				040F31422301AD790040BB88 /* MusicVideoCollectionViewCell.swift in Sources */,
 				040F31452301AE3C0040BB88 /* NetworkingManager.swift in Sources */,
+				040F314D2301DD590040BB88 /* PlayerView.swift in Sources */,
 				040F31312301AAAF0040BB88 /* ViewController.swift in Sources */,
 				040F31472301AF570040BB88 /* MusicVideoModels.swift in Sources */,
 				040F312F2301AAAF0040BB88 /* AppDelegate.swift in Sources */,
