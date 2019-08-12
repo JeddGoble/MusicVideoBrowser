@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MusicVideoCollectionViewCell" id="gTV-IL-0wX" customClass="MusicVideoCollectionViewCell" customModule="Krikey_Jedd_Goble" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fku-km-iW5">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                    </imageView>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-zv-T2B">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YwO-6I-hsg">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Axe-bx-pxd" userLabel="Video Player Container View">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                    </view>
+                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEZ-ax-GAH">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1F-l3-eLz">
+                                <rect key="frame" x="8" y="217" width="214" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Xax-rM-eHN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elS-RA-VlB">
+                                <rect key="frame" x="8" y="202" width="214" height="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-1" height="1"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="x1F-l3-eLz" secondAttribute="trailing" constant="10" id="3GD-If-fvd"/>
+                            <constraint firstItem="x1F-l3-eLz" firstAttribute="leading" secondItem="jEZ-ax-GAH" secondAttribute="leadingMargin" id="Q70-Q0-2cK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="elS-RA-VlB" secondAttribute="trailing" constant="10" id="YIf-rF-eoH"/>
+                            <constraint firstItem="x1F-l3-eLz" firstAttribute="top" secondItem="elS-RA-VlB" secondAttribute="bottom" constant="2" id="a2l-vs-H5q"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="x1F-l3-eLz" secondAttribute="bottom" id="erX-WV-F4A"/>
+                            <constraint firstItem="elS-RA-VlB" firstAttribute="leading" secondItem="jEZ-ax-GAH" secondAttribute="leadingMargin" id="pGh-Bt-Yk8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fku-km-iW5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4I5-jQ-p9L"/>
+                <constraint firstItem="jEZ-ax-GAH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9BP-mj-nXQ"/>
+                <constraint firstItem="9c2-zv-T2B" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="A90-4M-39v"/>
+                <constraint firstAttribute="trailing" secondItem="Axe-bx-pxd" secondAttribute="trailing" id="Hn8-sK-Ofg"/>
+                <constraint firstItem="fku-km-iW5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SXG-Kg-c4m"/>
+                <constraint firstItem="9c2-zv-T2B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TFj-cI-lOs"/>
+                <constraint firstItem="Axe-bx-pxd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="U24-lC-NWk"/>
+                <constraint firstAttribute="bottom" secondItem="fku-km-iW5" secondAttribute="bottom" id="V6l-ZV-Eih"/>
+                <constraint firstAttribute="trailing" secondItem="jEZ-ax-GAH" secondAttribute="trailing" id="Wy5-Wx-1Hs"/>
+                <constraint firstAttribute="bottom" secondItem="Axe-bx-pxd" secondAttribute="bottom" id="bLp-Ru-ds0"/>
+                <constraint firstAttribute="bottom" secondItem="9c2-zv-T2B" secondAttribute="bottom" id="bxU-4H-D01"/>
+                <constraint firstAttribute="trailing" secondItem="9c2-zv-T2B" secondAttribute="trailing" id="hGQ-VX-8qr"/>
+                <constraint firstItem="jEZ-ax-GAH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jrr-aq-DyB"/>
+                <constraint firstItem="Axe-bx-pxd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mKJ-qd-0F4"/>
+                <constraint firstAttribute="trailing" secondItem="fku-km-iW5" secondAttribute="trailing" id="vPy-Lt-rGG"/>
+                <constraint firstAttribute="bottom" secondItem="jEZ-ax-GAH" secondAttribute="bottom" id="yyP-I0-gHK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="240" height="240"/>
+            <connections>
+                <outlet property="artistNameLabel" destination="x1F-l3-eLz" id="kpK-3P-B4N"/>
+                <outlet property="imageView" destination="fku-km-iW5" id="9Oo-t9-wHI"/>
+                <outlet property="songNameLabel" destination="elS-RA-VlB" id="UB1-61-PhP"/>
+                <outlet property="videoPlayerContainerView" destination="Axe-bx-pxd" id="pZu-bt-X3m"/>
+            </connections>
+            <point key="canvasLocation" x="-10.144927536231885" y="68.303571428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>

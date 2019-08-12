@@ -1,0 +1,50 @@
+//
+//  MusicVideoCollectionViewCell.swift
+//  Krikey Jedd Goble
+//
+//  Created by Jedd Goble on 8/12/19.
+//  Copyright © 2019 Free Range Robots. All rights reserved.
+//
+
+import UIKit
+import AVKit
+
+class MusicVideoCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var songNameLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var videoPlayerContainerView: UIView!
+    
+    static let reuseID = String(describing: MusicVideoCollectionViewCell.self)
+    
+    let networkingManager = NetworkingManager()
+    
+    func layoutCellWithModel(_ musicVideo: MusicVideo) {
+        
+        if let songName = musicVideo.title {
+            songNameLabel.text = songName
+        }
+        
+        if let artistName = musicVideo.artistName {
+            artistNameLabel.text = artistName
+        }
+        
+        if let urlString = musicVideo.artworkURLString, let url = URL(string: urlString) {
+            networkingManager.downloadImageWithURL(url) { [weak self] (image) in
+                self?.imageView.image = image
+            }
+        }
+        
+        if let videoURLString = musicVideo.videoPreviewURLString,
+            let videoURL = URL(string: videoURLString) {
+            downloadAndDisplayVideo(withURL: videoURL)
+        }
+    }
+    
+    private func downloadAndDisplayVideo(withURL videoURL: URL) {
+        
+        let player = AVPlayer(url: videoURL)
+        // TODO
+    }
+}
