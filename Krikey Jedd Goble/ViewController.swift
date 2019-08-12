@@ -84,6 +84,21 @@ class ViewController: UIViewController {
             playerVC.videoURL = selectedVideoURL
         }
     }
+    
+    @IBAction func onExitButtonTapped(_ sender: UIButton) {
+        
+        playerView?.stop()
+        animatePlayerView(hide: true)
+    }
+    
+    
+    @IBAction func onFullScreenButtonTapped(_ sender: UIButton) {
+        
+        playerView?.pause()
+        performSegue(withIdentifier: "SearchToFullScreenSegue", sender: self)
+    }
+    
+    
 }
 
 extension ViewController: UITextFieldDelegate {

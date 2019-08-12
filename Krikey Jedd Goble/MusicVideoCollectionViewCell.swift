@@ -14,7 +14,6 @@ class MusicVideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var videoPlayerContainerView: UIView!
     
     static let reuseID = String(describing: MusicVideoCollectionViewCell.self)
     
