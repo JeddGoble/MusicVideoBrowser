@@ -35,16 +35,5 @@ class MusicVideoCollectionViewCell: UICollectionViewCell {
                 self?.imageView.image = image
             }
         }
-        
-        if let videoURLString = musicVideo.videoPreviewURLString,
-            let videoURL = URL(string: videoURLString) {
-            downloadAndDisplayVideo(withURL: videoURL)
-        }
-    }
-    
-    private func downloadAndDisplayVideo(withURL videoURL: URL) {
-        
-        let player = AVPlayer(url: videoURL)
-        // TODO
     }
 }

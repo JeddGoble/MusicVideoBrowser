@@ -42,41 +42,68 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="6bb-EZ-lsV"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7Bs-CI-jzE">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="64x-PC-Era" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8hf-D2-fNB"/>
+                            <constraint firstItem="7Bs-CI-jzE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FUG-TZ-dyG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="64x-PC-Era" secondAttribute="trailing" id="IP2-ok-eGd"/>
+                            <constraint firstItem="7Bs-CI-jzE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IQu-eE-R5T"/>
                             <constraint firstItem="64x-PC-Era" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TE9-Bt-JYU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="64x-PC-Era" secondAttribute="bottom" id="otZ-2G-8z1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="zK9-3H-Kqy">
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="KL9-JK-5Qv">
-                            <rect key="frame" x="171" y="7" width="72" height="30"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" id="KL9-JK-5Qv">
+                            <rect key="frame" x="33.5" y="7" width="347" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="BYZ-38-t0r" id="sGz-FE-CWM"/>
+                            </connections>
                         </textField>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="7Bs-CI-jzE" id="xdr-4B-E8M"/>
                         <outlet property="collectionView" destination="64x-PC-Era" id="K0t-7N-OMB"/>
+                        <outlet property="searchTextField" destination="KL9-JK-5Qv" id="6du-CY-MTn"/>
+                        <segue destination="N9s-TN-UKW" kind="show" identifier="SearchToFullScreenSegue" id="nL6-p6-ub4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="0xw-Ub-dAs">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="N9s-TN-UKW" customClass="PlayerViewController" customModule="Krikey_Jedd_Goble" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vb7-xg-OMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="139"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="H1E-U4-W9q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8uJ-sE-U3Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KmA-zn-qUU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="KmA-zn-qUU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

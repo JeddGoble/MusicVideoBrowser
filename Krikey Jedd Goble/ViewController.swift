@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.attributedPlaceholder = NSAttributedString(string: "Search...",
+                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText])
+        }
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     var results: [MusicVideo] = []
+    
+    var selectedVideoURL: URL? = nil
     
     let networkingManager = NetworkingManager()
     
@@ -29,12 +40,40 @@ class ViewController: UIViewController {
     }
     
     private func performDefaultSearch() {
-        networkingManager.performSearch(term: "Lizzo") { [weak self] (musicVideos) in
+        performSearch(withSearchTerm: "Lizzo")
+    }
+    
+    private func performSearch(withSearchTerm term: String) {
+        networkingManager.performSearch(term: term) { [weak self] (musicVideos) in
             if let results = musicVideos {
                 self?.results = results
                 self?.collectionView.reloadData()
             }
+            self?.activityIndicator.isHidden = true
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let playerVC = segue.destination as? PlayerViewController {
+            playerVC.videoURL = selectedVideoURL
+        }
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        activityIndicator.isHidden = false
+        
+        if let text = textField.text {
+            performSearch(withSearchTerm: text)
+        }
+        
+        textField.resignFirstResponder()
+        
+        return true
     }
 }
 
@@ -57,6 +96,17 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let musicVideo = results[indexPath.item]
+        if let urlString = musicVideo.videoPreviewURLString,
+            let url = URL(string: urlString) {
+            
+            selectedVideoURL = url
+            performSegue(withIdentifier: "SearchToFullScreenSegue", sender: self)
+        }
+        
+    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {

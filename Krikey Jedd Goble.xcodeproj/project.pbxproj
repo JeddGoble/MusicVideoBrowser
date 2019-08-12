@@ -16,6 +16,7 @@
 		040F31432301AD790040BB88 /* MusicVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040F31412301AD790040BB88 /* MusicVideoCollectionViewCell.xib */; };
 		040F31452301AE3C0040BB88 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F31442301AE3C0040BB88 /* NetworkingManager.swift */; };
 		040F31472301AF570040BB88 /* MusicVideoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F31462301AF570040BB88 /* MusicVideoModels.swift */; };
+		040F314B2301D4E00040BB88 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F314A2301D4E00040BB88 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		040F31412301AD790040BB88 /* MusicVideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicVideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		040F31442301AE3C0040BB88 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		040F31462301AF570040BB88 /* MusicVideoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoModels.swift; sourceTree = "<group>"; };
+		040F314A2301D4E00040BB88 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				040F312E2301AAAF0040BB88 /* AppDelegate.swift */,
 				040F31302301AAAF0040BB88 /* ViewController.swift */,
 				040F31322301AAAF0040BB88 /* Main.storyboard */,
+				040F314A2301D4E00040BB88 /* PlayerViewController.swift */,
 				040F31402301AD790040BB88 /* MusicVideoCollectionViewCell.swift */,
 				040F31442301AE3C0040BB88 /* NetworkingManager.swift */,
 				040F31462301AF570040BB88 /* MusicVideoModels.swift */,
@@ -153,6 +156,7 @@
 				040F31312301AAAF0040BB88 /* ViewController.swift in Sources */,
 				040F31472301AF570040BB88 /* MusicVideoModels.swift in Sources */,
 				040F312F2301AAAF0040BB88 /* AppDelegate.swift in Sources */,
+				040F314B2301D4E00040BB88 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

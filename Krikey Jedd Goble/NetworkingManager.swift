@@ -84,9 +84,11 @@ class NetworkingManager {
             musicVideo.artistName = result["artistName"] as? String
             musicVideo.title = result["trackName"] as? String
             musicVideo.artworkURLString = result["artworkUrl100"] as? String
-            musicVideo.videoPreviewURLString = result["previewUrl"] as? String
             
-            musicVideos.append(musicVideo)
+            if let previewURL = result["previewUrl"] as? String {
+                musicVideo.videoPreviewURLString = previewURL
+                musicVideos.append(musicVideo) // Only Add If It Has A Video URL
+            }
         }
         
         return musicVideos
